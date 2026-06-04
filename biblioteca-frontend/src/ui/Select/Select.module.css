@@ -1,0 +1,15 @@
+.select {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  outline: none;
+  font-size: 14px;
+  background: #fff;
+  color: var(--color-text);
+}
+
+.select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(30, 95, 173, 0.12);
+}
