@@ -1,20 +1,29 @@
+﻿/* Estilos compartidos por campos y mensajes de formularios. */
+
+/* Bloque visual principal de esta vista o componente. */
 .field {
   display: grid;
   gap: 7px;
 }
 
+/* Bloque visual principal de esta vista o componente. */
 .label {
   font-size: 13px;
   font-weight: 800;
   color: var(--color-text);
 }
 
+/* Bloque visual principal de esta vista o componente. */
 .hint {
   font-size: 12px;
   color: var(--color-muted);
 }
 
+/* Bloque visual principal de esta vista o componente. */
 .error {
   font-size: 12px;
   color: var(--color-danger);
 }
+
+
+

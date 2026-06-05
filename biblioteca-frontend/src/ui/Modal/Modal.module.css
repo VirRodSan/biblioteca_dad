@@ -1,3 +1,6 @@
+﻿/* Estilos del componente Modal y su fondo. */
+
+/* Bloque visual principal de esta vista o componente. */
 .backdrop {
   position: fixed;
   inset: 0;
@@ -8,6 +11,7 @@
   z-index: 50;
 }
 
+/* Bloque visual principal de esta vista o componente. */
 .modal {
   width: min(560px, 100%);
   background: var(--color-surface);
@@ -17,6 +21,7 @@
   box-shadow: 0 22px 60px rgba(15, 31, 61, 0.2);
 }
 
+/* Bloque visual principal de esta vista o componente. */
 .header {
   padding: 16px 18px;
   border-bottom: 1px solid var(--color-border);
@@ -25,10 +30,12 @@
   justify-content: space-between;
 }
 
+/* Bloque visual principal de esta vista o componente. */
 .title {
   font-weight: 900;
 }
 
+/* Bloque visual principal de esta vista o componente. */
 .close {
   border: 1px solid var(--color-border);
   background: #fff;
@@ -37,10 +44,12 @@
   cursor: pointer;
 }
 
+/* Bloque visual principal de esta vista o componente. */
 .body {
   padding: 18px;
 }
 
+/* Bloque visual principal de esta vista o componente. */
 .footer {
   padding: 14px 18px;
   border-top: 1px solid var(--color-border);
@@ -48,3 +57,6 @@
   justify-content: flex-end;
   gap: 8px;
 }
+
+
+

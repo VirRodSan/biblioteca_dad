@@ -1,3 +1,6 @@
+﻿/* Estilos del componente Card. */
+
+/* Bloque visual principal de esta vista o componente. */
 .card {
   border: 1px solid var(--color-border);
   background: var(--color-surface);
@@ -6,6 +9,7 @@
   box-shadow: var(--shadow-sm);
 }
 
+/* Bloque visual principal de esta vista o componente. */
 .header {
   padding: 16px 18px;
   border-bottom: 1px solid var(--color-border);
@@ -15,12 +19,14 @@
   gap: 12px;
 }
 
+/* Bloque visual principal de esta vista o componente. */
 .title {
   font-size: 16px;
   font-weight: 900;
   color: var(--color-text);
 }
 
+/* Bloque visual principal de esta vista o componente. */
 .actions {
   display: flex;
   flex-wrap: wrap;
@@ -28,6 +34,7 @@
   justify-content: flex-end;
 }
 
+/* Bloque visual principal de esta vista o componente. */
 .body {
   padding: 18px;
 }
@@ -43,3 +50,6 @@
     justify-content: flex-start;
   }
 }
+
+
+

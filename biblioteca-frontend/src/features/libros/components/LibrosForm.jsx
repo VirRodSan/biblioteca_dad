@@ -1,9 +1,12 @@
+﻿// Formulario reutilizable para crear y editar libros.
+
 import { useState, useEffect } from "react";
 import { Field } from "../../../ui/Form/Field";
 import { Input } from "../../../ui/Input/Input";
 import { Button } from "../../../ui/Button/Button";
 import { Card } from "../../../ui/Card/Card";
 
+// Componente que renderiza esta parte de la interfaz.
 export function LibroForm({ initialValues, onSubmit, isSubmitting }) {
   const [form, setForm] = useState({
     titulo: "",
@@ -30,6 +33,8 @@ export function LibroForm({ initialValues, onSubmit, isSubmitting }) {
     setErrors({});
   }, [initialValues]);
 
+  // Sincroniza el estado local con los campos del formulario.
+
   function handleChange(e) {
     const { name, value } = e.target;
 
@@ -38,6 +43,8 @@ export function LibroForm({ initialValues, onSubmit, isSubmitting }) {
       [name]: value,
     }));
   }
+
+  // Comprueba reglas minimas antes de permitir el envio.
 
   function validate() {
     const nextErrors = {};
@@ -50,6 +57,8 @@ export function LibroForm({ initialValues, onSubmit, isSubmitting }) {
 
     return nextErrors;
   }
+
+  // Valida el formulario antes de enviar los datos.
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -89,7 +98,7 @@ export function LibroForm({ initialValues, onSubmit, isSubmitting }) {
           <Input name="editorial" value={form.editorial} onChange={handleChange} />
         </Field>
 
-        <Field label="Año de publicacion">
+        <Field label="Anio de publicacion">
           <Input
             name="anioPublicacion"
             type="number"
@@ -128,3 +137,7 @@ export function LibroForm({ initialValues, onSubmit, isSubmitting }) {
     </Card>
   );
 }
+
+
+
+

@@ -1,6 +1,7 @@
-// src/ui/Card/Card.jsx
+﻿// Componente contenedor para secciones con titulo y contenido.
 import styles from "./Card.module.css";
 
+// Componente que renderiza esta parte de la interfaz.
 export function Card({ title, actions, children }) {
   return (
     <section className={styles.card}>
@@ -14,3 +15,6 @@ export function Card({ title, actions, children }) {
     </section>
   );
 }
+
+
+

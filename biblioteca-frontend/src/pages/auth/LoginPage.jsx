@@ -1,19 +1,24 @@
+﻿// Pagina de inicio de sesion.
+
 import { useState } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useAuth } from "../../auth/useAuth";
 import styles from "./AuthPage.module.css";
 
+// Pantalla de login: valida credenciales, usa AuthProvider y vuelve a la ruta solicitada.
 export function LoginPage() {
   const { login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Si ProtectedRoute envio al usuario aqui, se conserva la ruta original para volver tras login.
   const from = location.state?.from?.pathname || "/";
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  // Valida campos obligatorios antes de pedir autenticacion al context global.
   async function handleSubmit(e) {
     e.preventDefault();
     setError("");
@@ -22,6 +27,7 @@ export function LoginPage() {
     if (!password.trim()) return setError("La contrasena es obligatoria.");
 
     try {
+      // login persiste la sesion y actualiza el usuario compartido por toda la aplicacion.
       await login({ email: email.trim(), password });
       navigate(from, { replace: true });
     } catch (err) {
@@ -72,3 +78,7 @@ export function LoginPage() {
     </main>
   );
 }
+
+
+
+

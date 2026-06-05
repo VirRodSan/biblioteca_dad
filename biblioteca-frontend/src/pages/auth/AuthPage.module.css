@@ -1,3 +1,6 @@
+﻿/* Estilos compartidos por las paginas de login y registro. */
+
+/* Layout de autenticacion en dos columnas: presentacion a la izquierda y formulario a la derecha. */
 .authPage {
   min-height: 100dvh;
   display: grid;
@@ -5,6 +8,7 @@
   background: var(--color-bg);
 }
 
+/* clamp ajusta el espacio interno para que el panel respire en escritorio y no se desborde en movil. */
 .panel {
   padding: clamp(28px, 6vw, 72px);
   display: flex;
@@ -14,6 +18,7 @@
   border-right: 1px solid var(--color-border);
 }
 
+/* Marca visual reutilizada en login y registro. */
 .brand {
   display: inline-flex;
   align-items: center;
@@ -22,6 +27,7 @@
   font-weight: 900;
 }
 
+/* Inicial dentro del bloque de marca. */
 .brandMark {
   width: 42px;
   height: 42px;
@@ -33,6 +39,7 @@
   color: #fff;
 }
 
+/* Titulo grande pero acotado con clamp para adaptarse al ancho disponible. */
 .panel h1 {
   margin: 0;
   max-width: 620px;
@@ -46,12 +53,14 @@
   font-size: 17px;
 }
 
+/* Centra la tarjeta de formulario dentro de la columna derecha. */
 .formSide {
   display: grid;
   place-items: center;
   padding: 24px;
 }
 
+/* Tarjeta del formulario con ancho maximo para que los campos sigan siendo legibles. */
 .card {
   width: min(430px, 100%);
   background: var(--color-surface);
@@ -71,6 +80,7 @@
   color: var(--color-muted);
 }
 
+/* Formulario vertical: una columna fija para login y registro. */
 .form {
   display: grid;
   gap: 14px;
@@ -96,6 +106,7 @@
   box-shadow: 0 0 0 3px rgba(30, 95, 173, 0.12);
 }
 
+/* Boton principal del formulario de autenticacion. */
 .submit {
   margin-top: 4px;
   border: 0;
@@ -111,6 +122,7 @@
   background: var(--color-primary-dark);
 }
 
+/* Enlace para alternar entre login y registro. */
 .switch {
   margin: 16px 0 0;
   color: var(--color-muted);
@@ -123,12 +135,14 @@
   text-decoration: none;
 }
 
+/* Mensaje de validacion o error devuelto por la API. */
 .error {
   margin: 0;
   color: var(--color-danger);
   font-size: 13px;
 }
 
+/* En tablets y moviles se elimina la segunda columna y el panel queda encima del formulario. */
 @media (max-width: 820px) {
   .authPage {
     grid-template-columns: 1fr;
@@ -152,3 +166,6 @@
     align-items: start;
   }
 }
+
+
+

@@ -1,8 +1,9 @@
-// src/layouts/Navbar/Navbar.jsx
+﻿// Barra superior con estado de sesion y accion de logout.
 import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import { useAuth } from "../../auth/useAuth";
 
+// Componente que renderiza esta parte de la interfaz.
 export function Navbar() {
   const { usuario, logout } = useAuth();
   const displayName = usuario?.nombre || usuario?.username || usuario?.email || "Usuario";
@@ -46,3 +47,7 @@ export function Navbar() {
     </header>
   );
 }
+
+
+
+

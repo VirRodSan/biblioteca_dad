@@ -1,3 +1,5 @@
+﻿// Pagina de administracion del listado de usuarios.
+
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./UsuariosListPage.module.css";
@@ -11,6 +13,7 @@ import { ROLES } from "../../auth/roles";
 import { UsuarioTable } from "../../features/usuarios/components/UsuarioTable";
 import { useUsuarios } from "../../features/usuarios/hooks/useUsuarios";
 
+// Componente que renderiza esta parte de la interfaz.
 export function UsuariosListPage() {
   const navigate = useNavigate();
   const { usuarios, isLoading, error, loadUsuarios, removeUsuario, changeRol } = useUsuarios();
@@ -128,3 +131,7 @@ export function UsuariosListPage() {
     </div>
   );
 }
+
+
+
+

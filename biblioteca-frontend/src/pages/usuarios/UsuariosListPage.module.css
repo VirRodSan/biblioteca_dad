@@ -1,8 +1,12 @@
+﻿/* Estilos especificos del listado de usuarios. */
+
+/* Bloque visual principal de esta vista o componente. */
 .page {
   display: grid;
   gap: 18px;
 }
 
+/* Bloque visual principal de esta vista o componente. */
 .error {
   color: var(--color-danger);
   background: #fff1f1;
@@ -10,3 +14,6 @@
   padding: 12px 14px;
   margin: 0;
 }
+
+
+

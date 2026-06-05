@@ -1,3 +1,6 @@
+﻿/* Estilos del componente Table. */
+
+/* Bloque visual principal de esta vista o componente. */
 .wrap {
   width: 100%;
   overflow: auto;
@@ -6,6 +9,7 @@
   background: var(--color-surface);
 }
 
+/* Bloque visual principal de esta vista o componente. */
 .table {
   width: 100%;
   border-collapse: collapse;
@@ -13,6 +17,7 @@
   min-width: 680px;
 }
 
+/* Bloque visual principal de esta vista o componente. */
 .th {
   text-align: left;
   padding: 12px 14px;
@@ -29,6 +34,7 @@
   background: #fbfdff;
 }
 
+/* Bloque visual principal de esta vista o componente. */
 .td {
   padding: 13px 14px;
   border-bottom: 1px solid rgba(30, 95, 173, 0.08);
@@ -36,8 +42,12 @@
   color: var(--color-text);
 }
 
+/* Bloque visual principal de esta vista o componente. */
 .empty {
   padding: 28px 16px;
   color: var(--color-muted);
   text-align: center;
 }
+
+
+

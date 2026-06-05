@@ -1,8 +1,11 @@
+﻿// Pagina para editar un libro existente.
+
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { LibroForm } from "../../features/libros/components/LibrosForm";
 import { useLibros } from "../../features/libros/hooks/useLibros";
 
+// Componente que renderiza esta parte de la interfaz.
 export function LibrosEditPage() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -70,3 +73,7 @@ export function LibrosEditPage() {
     </div>
   );
 }
+
+
+
+

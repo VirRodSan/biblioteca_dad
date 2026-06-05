@@ -1,8 +1,11 @@
+﻿// Pagina inicial con resumen y accesos principales segun el usuario.
+
 import { Link } from "react-router-dom";
 import { useAuth } from "../auth/useAuth";
 import { ROLES } from "../auth/roles";
 import styles from "./HomePage.module.css";
 
+// Componente que renderiza esta parte de la interfaz.
 export function HomePage() {
   const { usuario } = useAuth();
 
@@ -48,7 +51,7 @@ export function HomePage() {
       ? [
           {
             title: "Gestion de libros",
-            text: "Mantén el catalogo actualizado con altas, ediciones y bajas.",
+            text: "Manten el catalogo actualizado con altas, ediciones y bajas.",
             to: "/gestion-libros",
             meta: "Bibliotecario",
           },
@@ -111,3 +114,7 @@ export function HomePage() {
     </div>
   );
 }
+
+
+
+

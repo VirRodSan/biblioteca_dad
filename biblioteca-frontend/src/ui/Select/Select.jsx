@@ -1,6 +1,7 @@
-// src/ui/Select/Select.jsx
+﻿// Componente base para controles select.
 import styles from "./Select.module.css";
 
+// Componente que renderiza esta parte de la interfaz.
 export function Select({ value, onChange, options, disabled = false, name }) {
   return (
     <select
@@ -18,3 +19,6 @@ export function Select({ value, onChange, options, disabled = false, name }) {
     </select>
   );
 }
+
+
+

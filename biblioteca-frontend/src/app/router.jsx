@@ -1,3 +1,5 @@
+﻿// Define las rutas y los permisos de navegacion del frontend.
+
 import { createBrowserRouter } from "react-router-dom";
 import { ProtectedRoute } from "../auth/ProtectedRoute";
 import { ROLES } from "../auth/roles";
@@ -25,6 +27,7 @@ export const router = createBrowserRouter([
   { path: "/login", element: <LoginPage /> },
   { path: "/register", element: <RegisterPage /> },
 
+  // Todas las rutas hijas pasan primero por ProtectedRoute para exigir sesion iniciada.
   {
     element: <ProtectedRoute />,
     children: [
@@ -34,6 +37,7 @@ export const router = createBrowserRouter([
           { path: "/", element: <HomePage /> },
           { path: "/libros", element: <LibrosCatalogoPage /> },
           {
+            // Solo el bibliotecario puede crear, editar o borrar libros.
             element: <ProtectedRoute allowedRoles={[ROLES.BIBLIOTECARIO]} />,
             children: [
               { path: "/gestion-libros", element: <LibrosListPage /> },
@@ -42,6 +46,7 @@ export const router = createBrowserRouter([
             ],
           },
           {
+            // La gestion de usuarios queda limitada al rol de bibliotecario.
             element: <ProtectedRoute allowedRoles={[ROLES.BIBLIOTECARIO]} />,
             children: [
               { path: "/usuarios", element: <UsuariosListPage /> },
@@ -50,12 +55,14 @@ export const router = createBrowserRouter([
             ],
           },
           {
+            // Cualquier usuario autenticado puede consultar sus prestamos activos.
             element: <ProtectedRoute allowedRoles={[ROLES.BIBLIOTECARIO, ROLES.DOCENTE, ROLES.ALUMNO]} />,
             children: [
               { path: "/prestamos/activos", element: <PrestamoActivePage /> },
             ],
           },
           {
+            // Los alumnos consultan prestamos, pero la creacion se limita a bibliotecario y docente.
             element: <ProtectedRoute allowedRoles={[ROLES.BIBLIOTECARIO, ROLES.DOCENTE]} />,
             children: [
               { path: "/prestamos/nuevo", element: <PrestamoCreatePage /> },
@@ -68,3 +75,7 @@ export const router = createBrowserRouter([
 
   { path: "*", element: <NotFoundPage /> },
 ]);
+
+
+
+

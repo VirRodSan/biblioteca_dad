@@ -1,3 +1,5 @@
+﻿// Pagina para editar un usuario existente.
+
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import styles from "../../pages/usuarios/UsuariosListPage.module.css";
@@ -5,6 +7,7 @@ import styles from "../../pages/usuarios/UsuariosListPage.module.css";
 import { UsuarioForm } from "../../features/usuarios/components/UsuarioForm";
 import { useUsuarios } from "../../features/usuarios/hooks/useUsuarios";
 
+// Componente que renderiza esta parte de la interfaz.
 export function UsuarioEditPage() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -66,3 +69,7 @@ export function UsuarioEditPage() {
     </div>
   );
 }
+
+
+
+

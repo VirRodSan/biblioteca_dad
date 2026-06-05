@@ -1,3 +1,5 @@
+﻿// Pagina de prestamos activos y gestion de devoluciones.
+
 import { useEffect, useState } from "react";
 import { useAuth } from "../../auth/useAuth";
 import { ROLES } from "../../auth/roles";
@@ -7,6 +9,7 @@ import { PrestamoUsuarioSearch } from "../../features/prestamos/components/Prest
 import { Card } from "../../ui/Card/Card";
 import { Button } from "../../ui/Button/Button";
 
+// Componente que renderiza esta parte de la interfaz.
 export function PrestamoActivePage() {
   const { usuario } = useAuth();
 
@@ -165,3 +168,7 @@ export function PrestamoActivePage() {
     </div>
   );
 }
+
+
+
+

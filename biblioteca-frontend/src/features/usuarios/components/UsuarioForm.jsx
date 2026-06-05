@@ -1,4 +1,4 @@
-// src/features/usuarios/components/UsuarioForm.jsx
+﻿// Formulario reutilizable para crear y editar usuarios.
 import { useEffect, useState } from "react";
 import { Card } from "../../../ui/Card/Card";
 import { Field } from "../../../ui/Form/Field";
@@ -8,6 +8,7 @@ import { Button } from "../../../ui/Button/Button";
 
 const TIPOS = ["BIBLIOTECARIO", "ALUMNO", "DOCENTE"];
 
+// Componente que renderiza esta parte de la interfaz.
 export function UsuarioForm({ initialValues, onSubmit, isSubmitting }) {
   const [dni, setDni] = useState(initialValues?.dni || "");
   const [nombre, setNombre] = useState(initialValues?.nombre || "");
@@ -34,15 +35,20 @@ export function UsuarioForm({ initialValues, onSubmit, isSubmitting }) {
     setPuesto(initialValues?.puesto || "");
   }, [initialValues]);
 
+  // Comprueba reglas minimas antes de permitir el envio.
+
   function validate() {
     const next = {};
     if (!dni.trim()) next.dni = "El DNI es obligatorio.";
     if (!nombre.trim()) next.nombre = "El nombre es obligatorio.";
     if (!email.trim()) next.email = "El email es obligatorio.";
-    if (email.trim() && !email.includes("@")) next.email = "Email no válido.";
+    if (email.trim() && !email.includes("@")) next.email = "Email no valido.";
     setErrors(next);
     return Object.keys(next).length === 0;
   }
+
+  
+  // Valida el formulario antes de enviar los datos.
 
   
   function handleSubmit(e) {
@@ -118,3 +124,7 @@ export function UsuarioForm({ initialValues, onSubmit, isSubmitting }) {
     </Card>
   );
 }
+
+
+
+

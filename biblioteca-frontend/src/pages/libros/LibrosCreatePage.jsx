@@ -1,8 +1,11 @@
+﻿// Pagina para crear un nuevo libro.
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LibroForm } from "../../features/libros/components/LibrosForm";
 import { useLibros } from "../../features/libros/hooks/useLibros";
 
+// Componente que renderiza esta parte de la interfaz.
 export function LibrosCreatePage() {
   const navigate = useNavigate();
   const { addLibro } = useLibros();
@@ -37,3 +40,7 @@ export function LibrosCreatePage() {
     </div>
   );
 }
+
+
+
+

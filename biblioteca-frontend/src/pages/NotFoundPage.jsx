@@ -1,6 +1,7 @@
-// src/pages/NotFoundPage.jsx
+﻿// Pagina mostrada cuando no existe una ruta solicitada.
 import { Link } from "react-router-dom";
 
+// Componente que renderiza esta parte de la interfaz.
 export function NotFoundPage() {
   return (
     <div style={{ padding: 16 }}>
@@ -10,3 +11,6 @@ export function NotFoundPage() {
     </div>
   );
 }
+
+
+

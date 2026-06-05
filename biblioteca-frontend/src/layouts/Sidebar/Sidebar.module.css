@@ -1,3 +1,6 @@
+﻿/* Estilos del menu lateral y enlaces de navegacion. */
+
+/* Menu principal de escritorio, colocado como columna lateral junto al contenido. */
 .sidebar {
   border-right: 1px solid var(--color-border);
   background: var(--color-surface);
@@ -6,12 +9,14 @@
   box-shadow: var(--shadow-sm);
 }
 
+/* Los enlaces se apilan en vertical mientras hay espacio lateral suficiente. */
 .nav {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
+/* Separador textual de grupos de navegacion; se elimina en movil para ahorrar ancho. */
 .sectionTitle {
   margin: 16px 10px 8px;
   font-size: 12px;
@@ -21,6 +26,7 @@
   letter-spacing: 0.06em;
 }
 
+/* Cada enlace usa NavLink, por eso puede recibir estado activo desde el router. */
 .link {
   text-decoration: none;
   color: var(--color-muted);
@@ -39,11 +45,13 @@
   color: var(--color-text);
 }
 
+/* Estado visual del enlace correspondiente a la ruta actual. */
 .active {
   background: var(--color-primary-soft);
   color: var(--color-primary);
 }
 
+/* Icono compacto de apoyo para escanear el menu en escritorio. */
 .icon {
   width: 24px;
   height: 24px;
@@ -57,6 +65,7 @@
   font-size: 12px;
 }
 
+/* En pantallas estrechas el menu se convierte en una fila con scroll horizontal. */
 @media (max-width: 900px) {
   .sidebar {
     border-right: none;
@@ -66,6 +75,7 @@
   }
 
   .nav {
+    /* nowrap mantiene todos los accesos en una sola linea desplazable. */
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 8px;
@@ -85,3 +95,6 @@
     display: none;
   }
 }
+
+
+

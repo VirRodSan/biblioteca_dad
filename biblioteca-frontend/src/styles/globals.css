@@ -1,4 +1,6 @@
-/* src/styles/globals.css */
+﻿/* Variables globales y estilos base compartidos por todo el frontend. */
+
+/* Variables de diseno reutilizadas por los estilos globales. */
 :root {
   color-scheme: light;
   --color-primary: #1e5fad;
@@ -39,18 +41,21 @@ textarea {
 a { color: inherit; }
 p { line-height: 1.55; }
 
+/* Grid base de formularios: dos columnas en escritorio para aprovechar el ancho. */
 .formGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
 
+/* Las acciones ocupan todo el ancho del formulario y se alinean a la derecha. */
 .formActions {
   grid-column: 1 / -1;
   display: flex;
   justify-content: flex-end;
 }
 
+/* Error general del formulario, separado de los errores de cada Field. */
 .formError {
   grid-column: 1 / -1;
   color: var(--color-danger);
@@ -58,6 +63,7 @@ p { line-height: 1.55; }
   font-size: 13px;
 }
 
+/* Cabecera reutilizable de pagina con titulo a la izquierda y acciones a la derecha. */
 .pageHeader {
   display: flex;
   align-items: flex-start;
@@ -66,6 +72,7 @@ p { line-height: 1.55; }
   margin-bottom: 18px;
 }
 
+/* Texto breve superior para indicar la seccion o contexto de la pagina. */
 .pageKicker {
   margin: 0 0 6px;
   color: var(--color-primary);
@@ -75,12 +82,14 @@ p { line-height: 1.55; }
   text-transform: uppercase;
 }
 
+/* clamp ajusta el titulo entre movil y escritorio sin saltos bruscos de tamano. */
 .pageTitle {
   margin: 0;
   font-size: clamp(1.45rem, 2vw, 2rem);
   line-height: 1.15;
 }
 
+/* Limita el ancho de la descripcion para mantener lineas legibles. */
 .pageDescription {
   margin: 8px 0 0;
   max-width: 720px;
@@ -103,16 +112,19 @@ p { line-height: 1.55; }
   color: var(--color-primary-dark);
 }
 
+/* Mensaje destacado para errores de carga, guardado o permisos. */
 .errorMessage {
   background: #fff1f1;
   color: var(--color-danger);
 }
 
+/* Mensaje destacado para operaciones completadas correctamente. */
 .successMessage {
   background: #eaf8ef;
   color: var(--color-success);
 }
 
+/* Fila comun para buscadores con input y boton en una misma linea. */
 .searchRow {
   display: flex;
   gap: 10px;
@@ -120,17 +132,20 @@ p { line-height: 1.55; }
   margin-bottom: 12px;
 }
 
+/* Apila bloques de contenido con separacion constante entre secciones. */
 .sectionStack {
   display: grid;
   gap: 18px;
 }
 
+/* flex-wrap permite que los botones pasen a otra linea si no caben. */
 .actionsRow {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
+/* Etiqueta compacta para estados como devuelto, activo o vencido. */
 .statusBadge {
   display: inline-flex;
   align-items: center;
@@ -140,16 +155,19 @@ p { line-height: 1.55; }
   font-weight: 900;
 }
 
+/* Variante visual para estados negativos o de alerta. */
 .statusBadgeDanger {
   background: #fff1f1;
   color: var(--color-danger);
 }
 
+/* Variante visual para estados correctos o completados. */
 .statusBadgeSuccess {
   background: #eaf8ef;
   color: var(--color-success);
 }
 
+/* En movil los formularios, cabeceras y buscadores pasan a una sola columna. */
 @media (max-width: 720px) {
   .formGrid {
     grid-template-columns: 1fr;
@@ -163,3 +181,6 @@ p { line-height: 1.55; }
     display: grid;
   }
 }
+
+
+

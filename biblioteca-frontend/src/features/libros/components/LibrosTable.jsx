@@ -1,10 +1,13 @@
+﻿// Tabla de libros con acciones disponibles para cada registro.
+
 import { Table } from "../../../ui/Table/Table";
 import { Button } from "../../../ui/Button/Button";
 
+// Componente que renderiza esta parte de la interfaz.
 export function LibrosTable({ libros, onEdit, onDelete, showActions = true }) {
   const columns = [
     { key: "id", header: "ID" },
-    { key: "titulo", header: "Título" },
+    { key: "titulo", header: "Titulo" },
     { key: "autor", header: "Autor" },
     { key: "isbn", header: "ISBN" },
   ];
@@ -33,3 +36,7 @@ export function LibrosTable({ libros, onEdit, onDelete, showActions = true }) {
     />
   );
 }
+
+
+
+

@@ -1,3 +1,6 @@
+﻿/* Estilos del componente Input. */
+
+/* Bloque visual principal de esta vista o componente. */
 .input {
   width: 100%;
   padding: 11px 12px;
@@ -14,3 +17,6 @@
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(30, 95, 173, 0.12);
 }
+
+
+

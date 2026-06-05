@@ -1,8 +1,10 @@
+﻿// Gestiona las peticiones de autenticacion y el modo mock de usuarios.
 
 import { httpClient } from "./httpClient";
 
 const AUTH_MODE = import.meta.env.VITE_AUTH_MODE || "api";
 
+// Usuarios locales para poder probar login sin backend cuando VITE_AUTH_MODE vale "mock".
 const MOCK_USERS = [
   {
     id: 1,
@@ -27,6 +29,7 @@ const MOCK_USERS = [
   },
 ];
 
+// Valida credenciales en modo mock o las envia al endpoint real de autenticacion.
 export async function loginRequest({ email, password }) {
   if (AUTH_MODE === "mock") {
     const user = MOCK_USERS.find(
@@ -44,6 +47,7 @@ export async function loginRequest({ email, password }) {
   return httpClient.post("/auth/login", { email, password });
 }
 
+// Registra un usuario nuevo; en modo mock simula la respuesta que devolveria la API.
 export async function registerRequest(payload) {
   if (AUTH_MODE === "mock") {
     return {
@@ -55,3 +59,7 @@ export async function registerRequest(payload) {
 
   return httpClient.post("/auth/register", payload);
 }
+
+
+
+

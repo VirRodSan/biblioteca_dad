@@ -1,3 +1,5 @@
+﻿// Pagina de administracion del listado de libros.
+
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card } from "../../ui/Card/Card";
@@ -6,6 +8,7 @@ import { Modal } from "../../ui/Modal/Modal";
 import { LibrosTable } from "../../features/libros/components/LibrosTable";
 import { useLibros } from "../../features/libros/hooks/useLibros";
 
+// Componente que renderiza esta parte de la interfaz.
 export function LibrosListPage() {
   const navigate = useNavigate();
   const { libros, isLoading, error, loadLibros, removeLibro } = useLibros();
@@ -83,3 +86,7 @@ export function LibrosListPage() {
     </>
   );
 }
+
+
+
+

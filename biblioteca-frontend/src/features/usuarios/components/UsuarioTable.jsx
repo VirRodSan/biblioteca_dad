@@ -1,7 +1,8 @@
-// src/features/usuarios/components/UsuarioTable.jsx
+﻿// Tabla de usuarios con acciones de administracion.
 import { Table } from "../../../ui/Table/Table";
 import { Button } from "../../../ui/Button/Button";
 
+// Componente que renderiza esta parte de la interfaz.
 export function UsuarioTable({ usuarios, onEdit, onDelete, onChangeRol }) {
   const columns = [
     { key: "id", header: "ID" },
@@ -36,3 +37,7 @@ export function UsuarioTable({ usuarios, onEdit, onDelete, onChangeRol }) {
 
   return <Table columns={columns} rows={usuarios} />;
 }
+
+
+
+

@@ -1,6 +1,7 @@
-// src/ui/Table/Table.jsx
+﻿// Componentes base para tablas reutilizables.
 import styles from "./Table.module.css";
 
+// Componente que renderiza esta parte de la interfaz.
 export function Table({ columns, rows, emptyText = "Sin datos" }) {
   return (
     <div className={styles.wrap}>
@@ -38,3 +39,6 @@ export function Table({ columns, rows, emptyText = "Sin datos" }) {
     </div>
   );
 }
+
+
+

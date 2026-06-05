@@ -1,3 +1,5 @@
+﻿// Buscador de libros disponible para crear prestamos.
+
 import { useState } from "react";
 import { useLibros } from "../../libros/hooks/useLibros";
 import { Button } from "../../../ui/Button/Button";
@@ -5,6 +7,7 @@ import { Input } from "../../../ui/Input/Input";
 import { Table } from "../../../ui/Table/Table";
 import { Card } from "../../../ui/Card/Card";
 
+// Componente que renderiza esta parte de la interfaz.
 export function LibroSearch({ selectedLibro, onSelectLibro }) {
   const { libros, isLoading, error, loadLibros } = useLibros();
   const [query, setQuery] = useState("");
@@ -91,3 +94,7 @@ export function LibroSearch({ selectedLibro, onSelectLibro }) {
     </Card>
   );
 }
+
+
+
+

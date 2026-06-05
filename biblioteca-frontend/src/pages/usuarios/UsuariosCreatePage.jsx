@@ -1,3 +1,5 @@
+﻿// Pagina para crear un nuevo usuario.
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./UsuariosListPage.module.css";
@@ -5,6 +7,7 @@ import styles from "./UsuariosListPage.module.css";
 import { UsuarioForm } from "../../features/usuarios/components/UsuarioForm";
 import { useUsuarios } from "../../features/usuarios/hooks/useUsuarios";
 
+// Componente que renderiza esta parte de la interfaz.
 export function UsuarioCreatePage() {
   const navigate = useNavigate();
   const { addUsuario } = useUsuarios();
@@ -39,3 +42,7 @@ export function UsuarioCreatePage() {
     </div>
   );
 }
+
+
+
+

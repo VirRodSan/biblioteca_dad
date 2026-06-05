@@ -1,8 +1,12 @@
+﻿/* Estilos de la pagina inicial y sus bloques de resumen. */
+
+/* Contenedor vertical de la pagina de inicio. */
 .page {
   display: grid;
   gap: 18px;
 }
 
+/* Hero principal con texto y tarjeta de sesion en la misma fila cuando hay ancho suficiente. */
 .hero {
   background: linear-gradient(135deg, #ffffff 0%, #eaf0fb 100%);
   border: 1px solid var(--color-border);
@@ -15,6 +19,7 @@
   box-shadow: var(--shadow-sm);
 }
 
+/* clamp permite que el titulo crezca en escritorio sin hacerse excesivo en movil. */
 .hero h1 {
   margin: 0;
   font-size: clamp(2rem, 4vw, 3.2rem);
@@ -28,6 +33,7 @@
   color: var(--color-muted);
 }
 
+/* Resumen de la sesion actual para mostrar nombre y rol del usuario autenticado. */
 .sessionCard {
   min-width: 210px;
   background: var(--color-surface);
@@ -58,6 +64,7 @@
 
 .summaryGrid,
 .cards {
+  /* auto-fit crea tantas columnas como quepan y baja tarjetas de linea automaticamente. */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 14px;
@@ -85,6 +92,7 @@
   color: var(--color-muted);
 }
 
+/* Tarjeta de acceso rapido: usa flex para mantener el enlace pegado al final. */
 .card {
   min-height: 190px;
   display: flex;
@@ -112,6 +120,7 @@
   background: var(--color-primary-dark);
 }
 
+/* En movil el hero pasa a una sola columna y la tarjeta de sesion ocupa el ancho disponible. */
 @media (max-width: 760px) {
   .hero {
     display: grid;
@@ -121,3 +130,6 @@
     min-width: 0;
   }
 }
+
+
+

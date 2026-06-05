@@ -1,3 +1,5 @@
+﻿// Buscador general de usuarios para seleccionar prestatarios.
+
 import { useState } from "react";
 import { useUsuarios } from "../../usuarios/hooks/useUsuarios";
 import { Button } from "../../../ui/Button/Button";
@@ -5,6 +7,7 @@ import { Input } from "../../../ui/Input/Input";
 import { Table } from "../../../ui/Table/Table";
 import { Card } from "../../../ui/Card/Card";
 
+// Componente que renderiza esta parte de la interfaz.
 export function UsuarioSearch({ selectedUsuario, onSelectUsuario }) {
   const { usuarios, isLoading, error, loadUsuarios } = useUsuarios();
   const [query, setQuery] = useState("");
@@ -73,3 +76,7 @@ export function UsuarioSearch({ selectedUsuario, onSelectUsuario }) {
     </Card>
   );
 }
+
+
+
+

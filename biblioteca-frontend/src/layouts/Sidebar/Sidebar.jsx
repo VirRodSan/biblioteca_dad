@@ -1,4 +1,4 @@
-// src/layouts/Sidebar/Sidebar.jsx
+﻿// Menu lateral con enlaces filtrados por rol.
 import { NavLink } from "react-router-dom";
 import styles from "./Sidebar.module.css";
 import { useAuth } from "../../auth/useAuth";
@@ -8,6 +8,7 @@ function getLinkClass({ isActive }) {
   return isActive ? `${styles.link} ${styles.active}` : styles.link;
 }
 
+// Componente que renderiza esta parte de la interfaz.
 export function Sidebar() {
   const { usuario } = useAuth();
   const rol = usuario?.rol;
@@ -66,3 +67,7 @@ export function Sidebar() {
     </aside>
   );
 }
+
+
+
+

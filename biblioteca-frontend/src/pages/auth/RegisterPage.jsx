@@ -1,8 +1,11 @@
+﻿// Pagina de registro de usuarios.
+
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../auth/useAuth";
 import styles from "./AuthPage.module.css";
 
+// Pantalla de registro: crea usuario y despues redirige al login.
 export function RegisterPage() {
   const { register } = useAuth();
   const navigate = useNavigate();
@@ -12,6 +15,7 @@ export function RegisterPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  // Valida datos minimos en cliente para evitar llamadas innecesarias a la API.
   async function handleSubmit(e) {
     e.preventDefault();
     setError("");
@@ -21,6 +25,7 @@ export function RegisterPage() {
     if (password.trim().length < 4) return setError("La contrasena debe tener al menos 4 caracteres.");
 
     try {
+      // register se comunica con la API pero no abre sesion automaticamente.
       await register({ nombre: nombre.trim(), email: email.trim(), password });
       navigate("/login", { replace: true });
     } catch (err) {
@@ -76,3 +81,7 @@ export function RegisterPage() {
     </main>
   );
 }
+
+
+
+

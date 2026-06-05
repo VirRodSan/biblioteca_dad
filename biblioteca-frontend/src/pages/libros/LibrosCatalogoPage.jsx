@@ -1,8 +1,11 @@
+﻿// Pagina de catalogo visible para consultar libros disponibles.
+
 import { useEffect } from "react";
 import { Card } from "../../ui/Card/Card";
 import { LibrosTable } from "../../features/libros/components/LibrosTable";
 import { useLibros } from "../../features/libros/hooks/useLibros";
 
+// Componente que renderiza esta parte de la interfaz.
 export function LibrosCatalogoPage() {
   const { libros, isLoading, error, loadLibros } = useLibros();
 
@@ -33,3 +36,7 @@ export function LibrosCatalogoPage() {
     </div>
   );
 }
+
+
+
+

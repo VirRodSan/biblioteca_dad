@@ -1,3 +1,5 @@
+﻿// Pagina para crear prestamos seleccionando usuario y libro.
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { usePrestamos } from "../../features/prestamos/hooks/usePrestamos";
@@ -7,6 +9,7 @@ import { Card } from "../../ui/Card/Card";
 import { Button } from "../../ui/Button/Button";
 import { Input } from "../../ui/Input/Input";
 
+// Componente que renderiza esta parte de la interfaz.
 export function PrestamoCreatePage() {
   const navigate = useNavigate();
   const { addPrestamo } = usePrestamos();
@@ -125,3 +128,7 @@ export function PrestamoCreatePage() {
     </div>
   );
 }
+
+
+
+

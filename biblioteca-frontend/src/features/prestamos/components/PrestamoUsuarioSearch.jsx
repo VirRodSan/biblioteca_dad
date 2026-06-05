@@ -1,9 +1,12 @@
+﻿// Buscador de usuarios integrado en el flujo de prestamos.
+
 import { useState } from "react";
 import { useUsuarios } from "../../usuarios/hooks/useUsuarios";
 import { Button } from "../../../ui/Button/Button";
 import { Input } from "../../../ui/Input/Input";
 import { Table } from "../../../ui/Table/Table";
 
+// Componente que renderiza esta parte de la interfaz.
 export function PrestamoUsuarioSearch({ onSelectUsuario }) {
   const { usuarios, isLoading, error, loadUsuarios } = useUsuarios();
   const [query, setQuery] = useState("");
@@ -70,3 +73,7 @@ export function PrestamoUsuarioSearch({ onSelectUsuario }) {
     </section>
   );
 }
+
+
+
+

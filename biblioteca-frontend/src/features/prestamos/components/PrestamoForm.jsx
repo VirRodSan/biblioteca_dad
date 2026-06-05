@@ -1,5 +1,8 @@
+﻿// Formulario para registrar un nuevo prestamo.
+
 import { useState } from "react";
 
+// Componente que renderiza esta parte de la interfaz.
 export function PrestamoForm({ onSubmit, isSubmitting }) {
   const [form, setForm] = useState({
     usuarioId: "",
@@ -9,6 +12,8 @@ export function PrestamoForm({ onSubmit, isSubmitting }) {
 
   const [validationError, setValidationError] = useState("");
 
+  // Sincroniza el estado local con los campos del formulario.
+
   function handleChange(e) {
     const { name, value } = e.target;
 
@@ -17,6 +22,8 @@ export function PrestamoForm({ onSubmit, isSubmitting }) {
       [name]: value,
     }));
   }
+
+  // Valida el formulario antes de enviar los datos.
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -33,17 +40,17 @@ export function PrestamoForm({ onSubmit, isSubmitting }) {
     }
 
     if (Number(form.usuarioId) <= 0) {
-      setValidationError("El ID del usuario debe ser válido.");
+      setValidationError("El ID del usuario debe ser valido.");
       return;
     }
 
     if (Number(form.libroId) <= 0) {
-      setValidationError("El ID del libro debe ser válido.");
+      setValidationError("El ID del libro debe ser valido.");
       return;
     }
 
     if (form.diasPrestamo && Number(form.diasPrestamo) <= 0) {
-      setValidationError("Los días de préstamo deben ser mayores que 0.");
+      setValidationError("Los dias de prestamo deben ser mayores que 0.");
       return;
     }
 
@@ -81,7 +88,7 @@ export function PrestamoForm({ onSubmit, isSubmitting }) {
       </div>
 
       <div style={{ marginBottom: 12 }}>
-        <label htmlFor="diasPrestamo">Días de préstamo</label>
+        <label htmlFor="diasPrestamo">Dias de prestamo</label>
         <br />
         <input
           id="diasPrestamo"
@@ -99,8 +106,11 @@ export function PrestamoForm({ onSubmit, isSubmitting }) {
       )}
 
       <button type="submit" disabled={isSubmitting}>
-        {isSubmitting ? "Creando préstamo..." : "Crear préstamo"}
+        {isSubmitting ? "Creando prestamo..." : "Crear prestamo"}
       </button>
     </form>
   );
 }
+
+
+

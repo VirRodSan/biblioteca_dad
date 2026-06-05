@@ -1,4 +1,4 @@
-// src/main.jsx
+﻿// Punto de entrada que renderiza React en el DOM.
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { App } from "./app/App";
@@ -9,4 +9,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <App />
   </React.StrictMode>
 );
+
+
+
+
 

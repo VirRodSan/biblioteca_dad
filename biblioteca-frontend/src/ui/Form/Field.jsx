@@ -1,7 +1,8 @@
-// src/ui/Form/Field.jsx
+﻿// Componente para agrupar label, control y error de un campo.
 import styles from "./Form.module.css";
 import { ErrorText } from "./ErrorText";
 
+// Componente que renderiza esta parte de la interfaz.
 export function Field({ label, children, error, hint }) {
   return (
     <div className={styles.field}>
@@ -12,3 +13,6 @@ export function Field({ label, children, error, hint }) {
     </div>
   );
 }
+
+
+

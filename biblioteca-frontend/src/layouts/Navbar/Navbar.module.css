@@ -1,3 +1,6 @@
+﻿/* Estilos de la barra superior y sus controles. */
+
+/* Barra fija superior con marca, usuario activo y acceso a login/logout. */
 .navbar {
   height: 64px;
   padding: 0 22px;
@@ -12,6 +15,7 @@
   z-index: 10;
 }
 
+/* Enlace de marca que devuelve al inicio sin recargar la pagina. */
 .brand {
   text-decoration: none;
   display: inline-flex;
@@ -49,16 +53,19 @@
   font-weight: 800;
 }
 
+/* Agrupa datos de usuario y botones manteniendo alineacion horizontal. */
 .right {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
+/* Bloque informativo de sesion; se oculta en movil para dejar espacio a las acciones. */
 .userBlock {
   text-align: right;
 }
 
+/* white-space evita que el nombre del usuario rompa la altura del navbar. */
 .user {
   display: block;
   font-size: 14px;
@@ -67,6 +74,7 @@
   white-space: nowrap;
 }
 
+/* Rol visible debajo del nombre para aclarar permisos actuales. */
 .role {
   display: block;
   color: var(--color-muted);
@@ -91,6 +99,7 @@
   color: var(--color-primary);
 }
 
+/* En movil se simplifica el navbar: menos padding y se oculta informacion secundaria. */
 @media (max-width: 720px) {
   .navbar {
     padding: 0 14px;
@@ -104,3 +113,6 @@
     display: none;
   }
 }
+
+
+

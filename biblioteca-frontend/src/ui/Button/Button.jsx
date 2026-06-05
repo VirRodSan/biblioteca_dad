@@ -1,9 +1,10 @@
-// src/ui/Button/Button.jsx
+﻿// Componente base para botones reutilizables.
 import styles from "./Button.module.css";
 
 const VARIANTS = new Set(["primary", "secondary", "danger", "ghost"]);
 const SIZES = new Set(["sm", "md", "lg"]);
 
+// Componente que renderiza esta parte de la interfaz.
 export function Button({
   children,
   type = "button",
@@ -36,3 +37,6 @@ export function Button({
     </button>
   );
 }
+
+
+

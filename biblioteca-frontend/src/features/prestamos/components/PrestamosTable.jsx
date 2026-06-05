@@ -1,3 +1,5 @@
+﻿// Tabla de prestamos con acciones de devolucion.
+
 import { ROLES } from "../../../auth/roles";
 import { useAuth } from "../../../auth/useAuth";
 import { Table } from "../../../ui/Table/Table";
@@ -23,6 +25,7 @@ function isAtrasado(prestamo) {
   return devolucion < hoy;
 }
 
+// Componente que renderiza esta parte de la interfaz.
 export function PrestamosTable({ prestamos, onDevolver, isReturning }) {
   const { usuario } = useAuth();
 
@@ -104,3 +107,7 @@ export function PrestamosTable({ prestamos, onDevolver, isReturning }) {
     />
   );
 }
+
+
+
+

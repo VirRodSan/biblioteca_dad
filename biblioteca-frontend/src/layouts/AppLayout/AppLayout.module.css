@@ -1,4 +1,6 @@
-/* src/layouts/AppLayout/AppLayout.module.css */
+﻿/* Estilos del layout principal de la aplicacion. */
+
+/* La app ocupa toda la altura visible y coloca navbar arriba y contenido debajo. */
 .shell {
   min-height: 100dvh;
   display: flex;
@@ -6,6 +8,7 @@
   background: var(--color-bg);
 }
 
+/* En escritorio se reserva una columna fija para Sidebar y el resto queda para la pagina activa. */
 .body {
   flex: 1;
   display: grid;
@@ -13,6 +16,7 @@
   min-height: 0;
 }
 
+/* min-width: 0 evita desbordes dentro del grid cuando hay tablas o textos largos. */
 .content {
   min-height: 0;
   min-width: 0;
@@ -20,6 +24,7 @@
   padding: 24px;
 }
 
+/* En pantallas medianas o pequenas el Sidebar pasa de columna lateral a barra superior horizontal. */
 @media (max-width: 900px) {
   .body {
     grid-template-columns: 1fr;
@@ -30,3 +35,6 @@
     padding-bottom: 92px;
   }
 }
+
+
+
