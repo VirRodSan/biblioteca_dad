@@ -1,4 +1,3 @@
-// src/api/httpClient.js
 import { getSession } from "../auth/sessionStorage";
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8081/api";
@@ -14,13 +13,13 @@ async function request(path, { method = "GET", body, token, headers } = {}) {
 
   const finalHeaders = { ...(headers || {}) };
 
-  // ✅ Solo Content-Type si hay body
+  
   if (body !== undefined) finalHeaders["Content-Type"] = "application/json";
 
-  // ✅ Auth (si lo usas)
+  
   if (token) finalHeaders.Authorization = `Bearer ${token}`;
 
-  // ✅ Header requerido por tu backend
+ 
   const session = getSession();
   const userId = session?.usuario?.id;
   if (userId != null) finalHeaders["X-User-Id"] = String(userId);
@@ -43,14 +42,14 @@ async function request(path, { method = "GET", body, token, headers } = {}) {
         const data = await res.json();
         message = data?.message || data?.error || message;
       } catch {
-        // Keep the generic HTTP message when the response body cannot be parsed.
+        
       }
     } else {
       try {
         const text = await res.text();
         if (text) message = text;
       } catch {
-        // Keep the generic HTTP message when the response body cannot be read.
+        
       }
     }
     const error = new Error(message);

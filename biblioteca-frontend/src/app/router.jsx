@@ -1,4 +1,3 @@
-// src/app/router.jsx
 import { createBrowserRouter } from "react-router-dom";
 import { ProtectedRoute } from "../auth/ProtectedRoute";
 import { ROLES } from "../auth/roles";

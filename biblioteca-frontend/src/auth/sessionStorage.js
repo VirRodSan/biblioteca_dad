@@ -1,4 +1,3 @@
-// src/auth/sessionStorage.js
 const SESSION_KEY = "biblioteca_session_v1";
 
 export function getSession() {

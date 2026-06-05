@@ -18,8 +18,6 @@ export function LibroForm({ initialValues, onSubmit, isSubmitting }) {
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
-    // Sync the form when the edit page loads a different book.
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setForm({
       titulo: initialValues?.titulo || "",
       autor: initialValues?.autor || "",
@@ -91,7 +89,7 @@ export function LibroForm({ initialValues, onSubmit, isSubmitting }) {
           <Input name="editorial" value={form.editorial} onChange={handleChange} />
         </Field>
 
-        <Field label="Anio de publicacion">
+        <Field label="Año de publicacion">
           <Input
             name="anioPublicacion"
             type="number"
