@@ -30,7 +30,5 @@ frontend/  → proyecto React web actual
 mobile/    → nueva aplicación móvil Expo
 
 
-## Contraseñas
-Supabase -> 8og9mjkAs1644lPf
-        - Project ID.- gdruibakepttolktqikz
+
         
