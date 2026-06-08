@@ -1,5 +1,11 @@
 import { Pressable, StyleSheet, Text } from "react-native";
 
+/**
+ * Boton reutilizable de la aplicacion.
+ *
+ * Centraliza estilos, variantes visuales y estado deshabilitado para mantener
+ * una apariencia consistente en pantallas y tarjetas.
+ */
 export default function AppButton({
   title,
   onPress,

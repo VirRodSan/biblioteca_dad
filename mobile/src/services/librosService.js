@@ -1,5 +1,8 @@
 import { supabase } from "../lib/supabase";
 
+/**
+ * Obtiene todos los libros ordenados por identificador.
+ */
 export async function getLibros() {
   const { data, error } = await supabase
     .from("libros")
@@ -13,6 +16,9 @@ export async function getLibros() {
   return data || [];
 }
 
+/**
+ * Crea un libro normalizando campos opcionales a null y cantidades a numero.
+ */
 export async function createLibro(libro) {
   const { data, error } = await supabase
     .from("libros")
@@ -39,6 +45,9 @@ export async function createLibro(libro) {
   return data;
 }
 
+/**
+ * Actualiza un libro existente con la misma normalizacion que el alta.
+ */
 export async function updateLibro(id, libro) {
   const { data, error } = await supabase
     .from("libros")
@@ -63,6 +72,10 @@ export async function updateLibro(id, libro) {
 
   return data;
 }
+
+/**
+ * Elimina un libro por identificador.
+ */
 export async function deleteLibro(id) {
   const { error } = await supabase
     .from("libros")

@@ -14,6 +14,12 @@ import LibroCard from "../components/LibroCard";
 import LibroFormScreen from "./LibroFormScreen";
 import { deleteLibro, getLibros } from "../services/librosService";
 
+/**
+ * Pantalla principal del catalogo.
+ *
+ * Muestra el listado de libros, permite buscar por titulo, autor o ISBN y
+ * habilita acciones de gestion cuando el perfil es bibliotecario.
+ */
 export default function LibrosScreen({ perfil }) {
   const [libros, setLibros] = useState([]);
   const [busqueda, setBusqueda] = useState("");
@@ -24,6 +30,9 @@ export default function LibrosScreen({ perfil }) {
   const esBibliotecario = 
     perfil?.rol?.trim().toUpperCase() === "BIBLIOTECARIO";
 
+  /**
+   * Carga el catalogo completo desde Supabase y actualiza estados de UI.
+   */
   async function cargarLibros() {
     setLoading(true);
     setError("");
@@ -42,6 +51,9 @@ export default function LibrosScreen({ perfil }) {
     cargarLibros();
   }, []);
 
+  /**
+   * Lista derivada que evita recalcular el filtro mientras no cambien entradas.
+   */
   const librosFiltrados = useMemo(() => {
     const texto = busqueda.trim().toLowerCase();
 
@@ -63,21 +75,33 @@ export default function LibrosScreen({ perfil }) {
   }, [libros, busqueda]);
 
   
+  /**
+   * Abre el formulario en modo creacion.
+   */
   function abrirFormularioCrear() {
     setLibroEditando(null);
     setMostrandoFormulario(true);
   }
 
+  /**
+   * Abre el formulario con los datos del libro seleccionado.
+   */
   function abrirFormularioEditar(libro) {
     setLibroEditando(libro);
     setMostrandoFormulario(true);
   }
 
+  /**
+   * Cierra el formulario y limpia cualquier edicion pendiente.
+   */
   function volverAlListado() {
     setLibroEditando(null);
     setMostrandoFormulario(false);
   }
 
+  /**
+   * Inserta o reemplaza el libro devuelto por el formulario sin recargar todo.
+   */
   function gestionarLibroGuardado(libroGuardado) {
     setLibros((prevLibros) => {
       const existe = prevLibros.some((libro) => libro.id === libroGuardado.id);
@@ -95,6 +119,9 @@ export default function LibrosScreen({ perfil }) {
     setMostrandoFormulario(false);
   }
 
+  /**
+   * Pide confirmacion antes de borrar un libro del catalogo.
+   */
   function confirmarEliminarLibro(libro) {
   Alert.alert(
     "Eliminar libro",
@@ -113,6 +140,9 @@ export default function LibrosScreen({ perfil }) {
   );
 }
 
+/**
+ * Elimina el libro en Supabase y lo quita del estado local.
+ */
 async function eliminarLibro(id) {
   setError("");
 

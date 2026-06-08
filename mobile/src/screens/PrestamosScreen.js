@@ -13,6 +13,12 @@ import PrestamoCard from "../components/PrestamoCard";
 import NuevoPrestamoScreen from "./NuevoPrestamoScreen";
 import { devolverPrestamo, getPrestamos } from "../services/prestamosService";
 
+/**
+ * Pantalla de prestamos.
+ *
+ * El bibliotecario ve todo, puede crear prestamos y registrar devoluciones. Los
+ * demas perfiles ven solamente sus propios prestamos.
+ */
 export default function PrestamosScreen({ perfil }) {
   const [prestamos, setPrestamos] = useState([]);
   const [mostrandoFormulario, setMostrandoFormulario] = useState(false);
@@ -22,6 +28,9 @@ export default function PrestamosScreen({ perfil }) {
   const esBibliotecario =
     perfil?.rol?.trim().toUpperCase() === "BIBLIOTECARIO";
 
+  /**
+   * Carga los prestamos visibles para el perfil actual.
+   */
   async function cargarPrestamos() {
     setLoading(true);
     setError("");
@@ -40,10 +49,16 @@ export default function PrestamosScreen({ perfil }) {
     cargarPrestamos();
   }, []);
 
+  /**
+   * Vuelve del formulario de alta al listado.
+   */
   function volverAlListado() {
     setMostrandoFormulario(false);
   }
 
+  /**
+   * Pide confirmacion antes de marcar un prestamo como devuelto.
+   */
   function confirmarDevolucion(prestamo) {
   Alert.alert(
     "Devolver préstamo",
@@ -61,6 +76,9 @@ export default function PrestamosScreen({ perfil }) {
   );
 }
 
+/**
+ * Marca el prestamo como devuelto y refresca el listado.
+ */
 async function devolver(prestamo) {
   setError("");
 
@@ -72,6 +90,9 @@ async function devolver(prestamo) {
   }
 }
 
+  /**
+   * Cierra el formulario y recarga para reflejar el nuevo prestamo.
+   */
   async function gestionarPrestamoCreado() {
     setMostrandoFormulario(false);
     await cargarPrestamos();

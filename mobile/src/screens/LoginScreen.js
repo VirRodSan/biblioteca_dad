@@ -6,12 +6,20 @@ import AppButton from '../components/AppButton';
 import AppInput from '../components/AppInput';
 import { login } from '../services/authService';
 
+/**
+ * Pantalla de inicio de sesion.
+ *
+ * Recoge credenciales y delega la autenticacion en Supabase Auth.
+ */
 export default function LoginScreen() {
   const [email, setEmail] = useState('admin@biblioteca.com');
   const [password, setPassword] = useState('123456');
   const [loadingLogin, setLoadingLogin] = useState(false);
   const [error, setError] = useState('');
 
+  /**
+   * Lanza el login y muestra errores de Supabase sin cerrar la pantalla.
+   */
   async function handleLogin() {
     setLoadingLogin(true);
     setError('');

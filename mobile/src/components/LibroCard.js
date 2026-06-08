@@ -2,6 +2,12 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import AppButton from "./AppButton";
 import { getPortadaPublicUrl } from "../services/portadasService";
 
+/**
+ * Tarjeta de resumen de un libro.
+ *
+ * Muestra los datos bibliograficos principales, la portada publica si existe y,
+ * para bibliotecarios, acciones de edicion y eliminacion.
+ */
 export default function LibroCard({
   libro,
   puedeGestionar = false,

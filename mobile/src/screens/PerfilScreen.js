@@ -2,6 +2,12 @@ import { StyleSheet, Text, View } from "react-native";
 
 import AppButton from "../components/AppButton";
 
+/**
+ * Pantalla de perfil del usuario conectado.
+ *
+ * Presenta valores defensivos por si el perfil llega incompleto y expone la
+ * accion de cierre de sesion recibida desde el contenedor.
+ */
 export default function PerfilScreen({ perfil, onLogout }) {
   const rol = perfil?.rol || "Sin rol";
   const nombre = perfil?.nombre || "Usuario sin nombre";

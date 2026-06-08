@@ -10,11 +10,20 @@ import * as Location from "expo-location";
 
 import AppButton from "../components/AppButton";
 
+/**
+ * Pantalla de mapa con la ubicacion actual del dispositivo.
+ *
+ * Usa Expo Location para solicitar permiso en primer plano y obtener
+ * coordenadas reales del movil.
+ */
 export default function MapaScreen() {
   const [ubicacion, setUbicacion] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
+  /**
+   * Solicita permiso y actualiza la region del mapa con la posicion actual.
+   */
   async function cargarUbicacionActual() {
     setLoading(true);
     setError("");

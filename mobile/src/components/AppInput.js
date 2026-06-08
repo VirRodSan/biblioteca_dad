@@ -1,5 +1,11 @@
 import { StyleSheet, TextInput } from 'react-native';
 
+/**
+ * Campo de texto base de la aplicacion.
+ *
+ * Expone las opciones mas usadas por los formularios y aplica un estilo comun
+ * a todos los inputs.
+ */
 export default function AppInput({
   value,
   onChangeText,

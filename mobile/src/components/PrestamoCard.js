@@ -2,6 +2,13 @@ import { StyleSheet, Text, View } from "react-native";
 
 import AppButton from "./AppButton";
 
+/**
+ * Tarjeta de resumen de un prestamo.
+ *
+ * Recibe el prestamo con sus relaciones de libro y usuario ya cargadas desde
+ * Supabase. Si el usuario puede gestionar y el prestamo sigue activo, muestra
+ * la accion para marcarlo como devuelto.
+ */
 export default function PrestamoCard({
   prestamo,
   puedeGestionar = false,

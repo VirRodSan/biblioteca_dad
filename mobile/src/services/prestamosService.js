@@ -1,5 +1,11 @@
 import { supabase } from "../lib/supabase";
 
+/**
+ * Obtiene prestamos con datos del libro y del usuario.
+ *
+ * Los bibliotecarios ven todo el historico; el resto de perfiles solo ve sus
+ * propios prestamos.
+ */
 export async function getPrestamos(perfil) {
   let query = supabase
     .from("prestamos")
@@ -43,6 +49,11 @@ export async function getPrestamos(perfil) {
   return data || [];
 }
 
+/**
+ * Crea un prestamo activo y descuenta un ejemplar disponible del libro.
+ *
+ * La fecha prevista de devolucion se calcula a 15 dias desde el alta.
+ */
 export async function createPrestamo({ libro, usuario }) {
   if (!libro || !usuario) {
     throw new Error("Debes seleccionar un libro y un usuario.");
@@ -94,6 +105,9 @@ export async function createPrestamo({ libro, usuario }) {
   return prestamoCreado;
 }
 
+/**
+ * Marca un prestamo activo como devuelto y repone un ejemplar disponible.
+ */
 export async function devolverPrestamo(prestamo) {
   if (!prestamo) {
     throw new Error("No se ha seleccionado ningún préstamo.");

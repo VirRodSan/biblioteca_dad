@@ -4,6 +4,9 @@ import { supabase } from "../lib/supabase";
 
 const BUCKET_PORTADAS = "portadas-libros";
 
+/**
+ * Construye la URL publica de una portada guardada en Supabase Storage.
+ */
 export function getPortadaPublicUrl(portadaPath) {
   if (!portadaPath) {
     return null;
@@ -16,6 +19,9 @@ export function getPortadaPublicUrl(portadaPath) {
   return data.publicUrl;
 }
 
+/**
+ * Sube una portada en base64 al bucket de Supabase y guarda su ruta en el libro.
+ */
 export async function uploadPortadaLibro({ libroId, imagen }) {
   if (!libroId) {
     throw new Error("No se ha encontrado el libro para asociar la portada.");

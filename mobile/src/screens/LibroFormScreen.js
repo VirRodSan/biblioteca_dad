@@ -19,6 +19,12 @@ import {
   uploadPortadaLibro,
 } from "../services/portadasService";
 
+/**
+ * Formulario de alta y edicion de libros.
+ *
+ * Gestiona campos bibliograficos, validacion local y portada opcional desde
+ * camara o galeria.
+ */
 export default function LibroFormScreen({
   libroInicial = null,
   onCancel,
@@ -52,6 +58,9 @@ export default function LibroFormScreen({
   const portadaActualUrl = getPortadaPublicUrl(libroInicial?.portada_path);
   const portadaPreviewUri = imagenPortada?.uri || portadaActualUrl;
 
+  /**
+   * Valida los campos antes de enviar datos a Supabase.
+   */
   function validarFormulario() {
     if (!titulo.trim()) {
       return "El título es obligatorio.";
@@ -95,6 +104,9 @@ export default function LibroFormScreen({
     return "";
   }
 
+  /**
+   * Pide permiso de biblioteca multimedia y guarda la imagen elegida.
+   */
   async function seleccionarDesdeGaleria() {
     setError("");
 
@@ -118,6 +130,9 @@ export default function LibroFormScreen({
     }
   }
 
+  /**
+   * Pide permiso de camara y guarda la foto capturada.
+   */
   async function sacarFoto() {
     setError("");
 
@@ -141,10 +156,16 @@ export default function LibroFormScreen({
     }
   }
 
+  /**
+   * Descarta solo la seleccion nueva; no elimina una portada ya guardada.
+   */
   function quitarSeleccionPortada() {
     setImagenPortada(null);
   }
 
+  /**
+   * Persiste el libro y sube la portada como segundo paso cuando procede.
+   */
   async function guardarLibro() {
     setError("");
 

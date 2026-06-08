@@ -16,6 +16,12 @@ import { getLibros } from "../services/librosService";
 import { getUsuariosPrestamo } from "../services/perfilesService";
 import { createPrestamo } from "../services/prestamosService";
 
+/**
+ * Formulario para crear un prestamo.
+ *
+ * Carga libros disponibles y usuarios prestables, permite filtrar ambas listas
+ * y exige seleccionar un libro y un usuario antes de guardar.
+ */
 export default function NuevoPrestamoScreen({ onCancel, onPrestamoCreado }) {
   const [libros, setLibros] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
@@ -30,6 +36,9 @@ export default function NuevoPrestamoScreen({ onCancel, onPrestamoCreado }) {
   const [guardando, setGuardando] = useState(false);
   const [error, setError] = useState("");
 
+  /**
+   * Carga en paralelo los libros y usuarios necesarios para el formulario.
+   */
   async function cargarDatos() {
     setLoading(true);
     setError("");
@@ -53,6 +62,9 @@ export default function NuevoPrestamoScreen({ onCancel, onPrestamoCreado }) {
     cargarDatos();
   }, []);
 
+  /**
+   * Libros con stock disponible, filtrados por texto de busqueda.
+   */
   const librosDisponibles = useMemo(() => {
     const texto = busquedaLibro.trim().toLowerCase();
 
@@ -75,6 +87,9 @@ export default function NuevoPrestamoScreen({ onCancel, onPrestamoCreado }) {
       });
   }, [libros, busquedaLibro]);
 
+  /**
+   * Usuarios filtrados por nombre, email o rol.
+   */
   const usuariosFiltrados = useMemo(() => {
     const texto = busquedaUsuario.trim().toLowerCase();
 
@@ -95,6 +110,9 @@ export default function NuevoPrestamoScreen({ onCancel, onPrestamoCreado }) {
     });
   }, [usuarios, busquedaUsuario]);
 
+  /**
+   * Valida seleccion y delega el alta del prestamo en el servicio.
+   */
   async function guardarPrestamo() {
     setError("");
 
@@ -128,6 +146,9 @@ export default function NuevoPrestamoScreen({ onCancel, onPrestamoCreado }) {
     }
   }
 
+  /**
+   * Renderiza cada opcion de libro seleccionable.
+   */
   function renderLibroItem({ item }) {
     const seleccionado = libroSeleccionado?.id === item.id;
 
@@ -145,6 +166,9 @@ export default function NuevoPrestamoScreen({ onCancel, onPrestamoCreado }) {
     );
   }
 
+  /**
+   * Renderiza cada opcion de usuario seleccionable.
+   */
   function renderUsuarioItem({ item }) {
     const seleccionado = usuarioSeleccionado?.id === item.id;
 
